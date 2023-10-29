@@ -1,0 +1,91 @@
+@import "../../styles//util.module.scss";
+@import "../../styles//variables.module.scss";
+
+.header {
+  background: transparent;
+  @include flex-spacebw-center;
+  max-height: 12em;
+  height: 8em;
+  padding: 0 3em;
+  svg {
+    width: 5em;
+    fill: $primary;
+  }
+  @media screen and (min-width: $breakpoint-s) {
+    padding: 0 6em;
+    height: 11em;
+    svg {
+      width: 6em;
+    }
+  }
+}
+
+.menuToggle {
+  z-index: 999;
+  width: 2.78em;
+  height: 2.09em;
+  background: none;
+  position: relative;
+  display: inline-flex;
+  margin-top: 1.5em;
+  color: $secondary;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: $secondary;
+    height: 1.6px;
+    width: 100%;
+    top: 0;
+    transition: transform 0.2s ease-in-out;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background: $secondary;
+    height: 2.5px;
+    width: 70%;
+    margin-top: 0.8em;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  @media screen and (max-width: $breakpoint-m) {
+    &::after,
+    &::before {
+      background: $primary;
+    }
+  }
+}
+.toggleOpen {
+  &::after {
+    width: 100%;
+    height: 1.6px;
+    margin-top: 0;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease-in-out;
+  }
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+  }
+  @media screen and (max-width: $breakpoint-m) {
+    &::after,
+    &::before {
+      background: $secondary;
+    }
+    svg {
+      fill: $secondary;
+    }
+  }
+}

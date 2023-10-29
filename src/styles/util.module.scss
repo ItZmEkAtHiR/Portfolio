@@ -1,0 +1,17 @@
+@mixin flex-spacebw-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
