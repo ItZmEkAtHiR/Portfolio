@@ -16,9 +16,13 @@ export default function NavMenu({ id, show }: Iprops): JSX.Element {
   return (
     <nav id={id} className={navStyles}>
       <ul className={siteNavStyles}>
-        <li>About</li>
+        <a href="#about">
+          <li>About</li>
+        </a>
         <li>My Career</li>
-        <li>Contact</li>
+        <a href="#home">
+          <li>Contact</li>
+        </a>
       </ul>
       {/* <div className="basicDet">
         <span>Say Hello</span>

@@ -6,7 +6,9 @@
   @include flex-spacebw-center;
   max-height: 12em;
   height: 8em;
-  padding: 0 3em;
+  padding: 0 1em;
+  position: fixed;
+  width: 100vw;
   svg {
     width: 5em;
     fill: $primary;
@@ -22,12 +24,12 @@
 
 .menuToggle {
   z-index: 999;
-  width: 2.78em;
+  width: 3em;
   height: 2.09em;
   background: none;
   position: relative;
   display: inline-flex;
-  margin-top: 1.5em;
+  margin-top: 1.2em;
   color: $secondary;
   border: none;
   outline: none;
@@ -48,8 +50,8 @@
     position: absolute;
     background: $secondary;
     height: 2.5px;
-    width: 70%;
-    margin-top: 0.8em;
+    width: 65%;
+    margin-top: 1.1em;
     right: 0;
     transition: all 0.2s ease-in-out;
   }

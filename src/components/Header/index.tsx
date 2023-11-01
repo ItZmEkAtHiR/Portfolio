@@ -7,7 +7,7 @@ import NavMenu from "../NavMenu";
 
 export default function Header<T>(): JSX.Element {
   const [navOpen, setNavOpen] = useState<boolean>(false);
-  const navbarRef = useRef<HTMLDivElement>(null);
+  const navbarRef = useRef<HTMLButtonElement>(null);
 
   const navButtonClass = navOpen
     ? joinClass(style.menuToggle, style.toggleOpen)
@@ -21,15 +21,19 @@ export default function Header<T>(): JSX.Element {
     setNavOpen(!navOpen);
   };
 
-  useClickOutside(navbarRef, () => setNavOpen(false));
+  useClickOutside(navbarRef, () => {
+    setTimeout(() => {
+      setNavOpen(false);
+    }, 200);
+  });
 
   return (
     <header className={headerStyle}>
-      <a href="/">
+      <a href="#about">
         <Logo />
       </a>
       <button
-        aria-controls="nav-menu"
+        ref={navbarRef}
         className={navButtonClass}
         onClick={handleNavClick}
       ></button>
